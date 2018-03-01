@@ -18,17 +18,17 @@ class Test_ChangeProfile():
     def test_wrong_request(resource_setup):
         assert wrong_request() == {'Description': 'invalid uri', 'Status': 3}
     def test_no_body_request(resource_setup):
-        assert no_body_request() == {'Description': "can't read 'tradingProfile' param", 'Status': 4}
+        assert no_body_request() == {'Description': "can't find 'tradingProfile' param", 'Status': 4}
     def test_request_without_name_and_platform(resource_setup):
-        assert request_without_name_and_platform() == {'Description': "can't read 'name' param", 'Status': 4}
+        assert request_without_name_and_platform() == {'Description': "can't find 'name' param", 'Status': 4}
     def test_request_without_name(resource_setup):
-        assert request_without_name() == {'Description': "can't read 'name' param", 'Status': 4}
+        assert request_without_name() == {'Description': "can't find 'name' param", 'Status': 4}
     def test_request_without_platforms(resource_setup):
         assert request_without_platforms() == {'Description': 'Done', 'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT5_REAL'}, {'Description': 'Done', 'Status': 0, 'platform': 'MT5_DEMO'}], 'Status': 0}
     def test_no_value_to_name(resource_setup):
         assert no_value_to_name() == {'Description': "can't find profile ''", 'Status': 5}
     def test_value_to_name_not_str(resource_setup):
-        assert value_to_name_not_str() == {'Description': "can't read 'name' param", 'Status': 4}
+        assert value_to_name_not_str() == {'Description': "'name' param not a string", 'Status': 5}
     def test_correct_value_to_name(resource_setup):
         assert correct_value_to_name() == {'Description': 'Done', 'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT5_REAL'}, {'Description': 'Done', 'Status': 0, 'platform': 'MT5_DEMO'}], 'Status': 0}
     def test_not_found_profile_for_name_value(resource_setup):
