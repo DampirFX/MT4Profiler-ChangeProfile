@@ -77,7 +77,7 @@ def correct_value_to_name():
     data = {
         "tradingProfile":{
             "name":"Default",
-            "platforms":["MT5_REAL", "MT5_DEMO"]
+            "platforms":["MT4_INSTANT_REAL1", "MT4_MARKET_REAL"]
         }
     }
     FinishResult = trueurl(data)
@@ -124,7 +124,7 @@ def correct_value_to_platforms_one_server():
     data = {
         "tradingProfile":{
             "name":"Default",
-            "platforms":["MT5_REAL"]
+            "platforms":["MT4_INSTANT_DEMO"]
         }
     }
     FinishResult = trueurl(data)
@@ -135,7 +135,7 @@ def correct_value_to_platforms_two_servers():
     data = {
         "tradingProfile":{
             "name":"Default",
-            "platforms":["MT5_REAL","MT5_DEMO"]
+            "platforms":["MT4_RD_REAL","MT4_RD_DEMO"]
         }
     }
     FinishResult = trueurl(data)
@@ -157,7 +157,7 @@ def not_found_platform_in_profile():
     data = {
         "tradingProfile":{
             "name":"Default",
-            "platforms":["MT5_TEST"]
+            "platforms":["MT4_TEST"]
         }
     }
     FinishResult = trueurl(data)
