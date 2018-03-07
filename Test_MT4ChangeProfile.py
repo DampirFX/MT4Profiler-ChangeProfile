@@ -59,9 +59,7 @@ class Test_ChangeProfile():
         assert correct_value_to_platforms_two_servers() == {'Description': 'Done', 'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT4_RD_REAL'},
                                                                                               {'Description': 'Done', 'Status': 0, 'platform': 'MT4_RD_DEMO'}], 'Status': 0}
     def test_value_to_platforms_two_servers_one_not_in_config(resource_setup):
-        value_to_platforms_two_servers_one_not_in_config() == {'Description': 'One or more updates are failed',
-                                                               'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT5_DEMO'},
-                                                                          {'Description': 'No connection', 'Status': 6, 'platform': 'MT5_TEST'}], 'Status': 7}
+        assert value_to_platforms_two_servers_one_not_in_config() == {'Description': 'One or more updates are failed', 'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT5_DEMO'}, {'Description': 'No connection', 'Status': 6, 'platform': 'MT5_TEST'}], 'Status': 7}
     def test_not_found_platform_in_profile(resource_setup):
         assert not_found_platform_in_profile() == {'Description': 'Some updates have failed',
                                                    'Result': [{'Description': 'No information in config', 'Status': 2, 'platform': 'MT4_TEST'}], 'Status': 7}
@@ -94,7 +92,7 @@ class Test_ChangeProfile():
         def test_not_found_platform_in_profile(resource_setup):
             assert not_found_platform_in_profile() == {'Description': 'One or more updates are failed', 'Result': [{'Description': 'No information in config', 'Status': 2, 'platform': 'MT5_TEST'}], 'Status': 7}
         def test_value_to_platforms_two_servers_one_not_in_config(resource_setup):
-            value_to_platforms_two_servers_one_not_in_config() == {'Description': 'One or more updates are failed', 'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT5_DEMO'}, {'Description': 'No connection', 'Status': 6, 'platform': 'MT5_TEST'}], 'Status': 7}
+            assert value_to_platforms_two_servers_one_not_in_config() == {'Description': 'One or more updates are failed', 'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT5_DEMO'}, {'Description': 'No connection', 'Status': 6, 'platform': 'MT5_TEST'}], 'Status': 7}
 
 #############################################################################
 #Проверка запроса Reload

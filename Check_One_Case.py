@@ -1,5 +1,5 @@
 from Cases import *
 
 
-print(not_found_platform_in_profile())
+print(value_to_platforms_two_servers_one_not_in_config())
 
