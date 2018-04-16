@@ -1,7 +1,7 @@
 from ChangeProfile_Request import *
 from ReloadProfiles_Request import *
 import allure
-from DB_Connector import *
+from Get_data_from_server import *
 import time
 
 
@@ -13,7 +13,7 @@ def wrong_request():
     data = {
         "tradingProfile":{
             "name":"Default",
-            "platforms":["MT5_REAL", "MT5_DEMO"]
+            "platforms":["MT4_INSTANT_REAL1"]
                         }
             }
     FinishResult = falseurl(data)
@@ -33,19 +33,49 @@ def request_without_name_and_platform():
 #############################################################################
 def request_without_name():
     allure.description("No parameter name on request")
-    data = {
-        "tradingProfile":{"platforms":["MT5_REAL", "MT5_DEMO"]}
-    }
-    FinishResult = trueurl(data)
-    return FinishResult
+    with allure.step('Sending a request'):
+        data = {
+            "tradingProfile":{"platforms":["MT4_MARKET_REAL", "MT4_MARKET_DEMO"]}
+        }
+        R1 = trueurl(data)
+
+    with allure.step('Get data from MT4_MARKET_REAL'):
+        R2 = Get_data_from_server('172.16.1.60')
+
+    with allure.step('Get data from MT4_MARKET_DEMO'):
+        R3 = Get_data_from_server('172.16.1.51')
+    return R1, R2, R3
 #############################################################################
 def request_without_platforms():
     allure.description("No parameter platforms on request")
-    data = {
-        "tradingProfile":{"name":"Default"}
-    }
-    FinishResult = trueurl(data)
-    return FinishResult
+    with allure.step('Sending a request'):
+        data = {
+            "tradingProfile":{"name":"Default"}
+        }
+        R1 = trueurl(data)
+    time.sleep(2)
+
+    with allure.step('Get data from MT4_INSTANT_REAL1'):
+        R2 = Get_data_from_server('172.16.1.183')
+
+    with allure.step('Get data from MT4_INSTANT_REAL2'):
+        R3 = Get_data_from_server('172.16.1.184')
+
+    with allure.step('Get data from MT4_RD_DEMO'):
+        R4 = Get_data_from_server('172.16.1.132')
+
+    with allure.step('Get data from MT4_MARKET_REAL'):
+        R5 = Get_data_from_server('172.16.1.60')
+
+    with allure.step('Get data from MT4_INSTANT_DEMO'):
+        R6 = Get_data_from_server('172.16.1.175')
+
+    with allure.step('Get data from MT4_MARKET_DEMO'):
+        R7 = Get_data_from_server('172.16.1.51')
+
+    with allure.step('Get data from MT4_RD_REAL'):
+        R8 = Get_data_from_server('172.16.1.181')
+    return R1, R2, R3, R4, R5, R6, R7, R8
 
 #############################################################################
 #Проверка параметра Name
@@ -191,57 +221,6 @@ def no_valid_json_2():
     data = "{\"tradingProfile:{\"name\":\"Default\",\"platforms\":[\"MT5_DEMO\"]}}"
     FinishResult = trueurl_without_json(data)
     return FinishResult
-#############################################################################
-#Check DB (work service with MT5Server)
-#############################################################################
-def check_db_first():                                                                                                     #Описать тест задать несколько файлов с конфигурацией для проверок
-    allure.description('Check data in the DB')
-    with allure.step('Request'):
-        data = {
-            "tradingProfile":{
-                "name":"For_AutoTest_1",
-                "platforms":["MT5_REAL","MT5_DEMO"]
-            }
-        }
-        FinishResult = trueurl(data)
-    time.sleep(2)
-
-    with allure.step('Check data in the DB'):
-        db_real = db_connection("mt5_real")
-        db_demo = db_connection("mt5_demo")
-
-        result1 = db_select(db_real, "SELECT mode, ActionValueUInt,ActionType FROM mt5_routing where name='CFD Timeout'")
-        result2 = db_select(db_real, "SELECT mode, ActionValueUInt,ActionType FROM mt5_routing where name='Experts Timeout'")
-        result3 = db_select(db_demo, "SELECT mode, ActionValueUInt,ActionType FROM mt5_routing where name='CFD Timeout'")
-
-        db_close_connection(db_real)
-        db_close_connection(db_demo)
-
-    return FinishResult,result1,result2,result3
-#############################################################################
-def check_db_second():
-    allure.description('Check data in the DB')
-    with allure.step('Request'):
-        data = {
-            "tradingProfile":{
-                "name":"For_AutoTest_2",
-                "platforms":["MT5_REAL","MT5_DEMO"]
-            }
-        }
-        FinishResult = trueurl(data)
-    time.sleep(2)
-    with allure.step('Check data in the DB'):
-        db_real = db_connection("mt5_real")
-        db_demo = db_connection("mt5_demo")
-
-        result1 = db_select(db_real, "SELECT mode, ActionValueUInt,ActionType FROM mt5_routing where name='CFD Timeout'")
-        result2 = db_select(db_real, "SELECT mode, ActionValueUInt,ActionType FROM mt5_routing where name='Experts Timeout'")
-        result3 = db_select(db_demo, "SELECT mode, ActionValueUInt,ActionType FROM mt5_routing where name='CFD Timeout'")
-
-        db_close_connection(db_real)
-        db_close_connection(db_demo)
-
-    return FinishResult,result1,result2,result3
 
 #############################################################################
 #Check request ReloadProfiles
