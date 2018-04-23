@@ -85,7 +85,7 @@ def no_value_to_name():
     data = {
         "tradingProfile":{
             "name":"",
-            "platforms":["MT5_REAL", "MT5_DEMO"]
+            "platforms":["MT4_MARKET_REAL", "MT4_MARKET_DEMO"]
         }
     }
     FinishResult = trueurl(data)
@@ -96,7 +96,7 @@ def value_to_name_not_str():
     data = {
         "tradingProfile":{
             "name":123456,
-            "platforms":["MT5_REAL", "MT5_DEMO"]
+            "platforms":["MT4_MARKET_REAL", "MT4_MARKET_DEMO"]
         }
     }
     FinishResult = trueurl(data)
@@ -104,21 +104,45 @@ def value_to_name_not_str():
 #############################################################################
 def correct_value_to_name():
     allure.description("Correct value to name")
-    data = {
-        "tradingProfile":{
-            "name":"Default",
-            "platforms":["MT4_INSTANT_REAL1", "MT4_MARKET_REAL"]
+    with allure.step('Sending a request'):
+        data = {
+            "tradingProfile":{
+                "name":"Crisis",
+                "platforms":["MT4_INSTANT_REAL1", "MT4_MARKET_REAL"]
+            }
         }
-    }
-    FinishResult = trueurl(data)
-    return FinishResult
+        R1 = trueurl(data)
+    time.sleep(2)
+
+    with allure.step('Get data from MT4_INSTANT_REAL1'):
+        R2 = Get_data_from_server('172.16.1.183')
+
+    with allure.step('Get data from MT4_INSTANT_REAL2'):
+        R3 = Get_data_from_server('172.16.1.184')
+
+    with allure.step('Get data from MT4_RD_DEMO'):
+        R4 = Get_data_from_server('172.16.1.132')
+
+    with allure.step('Get data from MT4_MARKET_REAL'):
+        R5 = Get_data_from_server('172.16.1.60')
+
+    with allure.step('Get data from MT4_INSTANT_DEMO'):
+        R6 = Get_data_from_server('172.16.1.175')
+
+    with allure.step('Get data from MT4_MARKET_DEMO'):
+        R7 = Get_data_from_server('172.16.1.51')
+
+    with allure.step('Get data from MT4_RD_REAL'):
+        R8 = Get_data_from_server('172.16.1.181')
+    return R1, R2, R3, R4, R5, R6, R7, R8
+
 #############################################################################
 def not_found_profile_for_name_value():
     allure.description("Not found profile for name value")
     data = {
         "tradingProfile":{
             "name":"for test",
-            "platforms":["MT5_REAL", "MT5_DEMO"]
+            "platforms":["MT4_INSTANT_REAL1", "MT4_MARKET_REAL"]
         }
     }
     FinishResult = trueurl(data)
@@ -129,14 +153,37 @@ def not_found_profile_for_name_value():
 #############################################################################
 def no_value_to_platforms():
     allure.description("No value to platforms")
-    data = {
-        "tradingProfile":{
-            "name":"Default",
-            "platforms":[]
+    with allure.step('Sending a request'):
+        data = {
+            "tradingProfile":{
+                "name":"Default",
+                "platforms":[]
+            }
         }
-    }
-    FinishResult = trueurl(data)
-    return FinishResult
+        R1 = trueurl(data)
+    time.sleep(2)
+
+    with allure.step('Get data from MT4_INSTANT_REAL1'):
+        R2 = Get_data_from_server('172.16.1.183')
+
+    with allure.step('Get data from MT4_INSTANT_REAL2'):
+        R3 = Get_data_from_server('172.16.1.184')
+
+    with allure.step('Get data from MT4_RD_DEMO'):
+        R4 = Get_data_from_server('172.16.1.132')
+
+    with allure.step('Get data from MT4_MARKET_REAL'):
+        R5 = Get_data_from_server('172.16.1.60')
+
+    with allure.step('Get data from MT4_INSTANT_DEMO'):
+        R6 = Get_data_from_server('172.16.1.175')
+
+    with allure.step('Get data from MT4_MARKET_DEMO'):
+        R7 = Get_data_from_server('172.16.1.51')
+
+    with allure.step('Get data from MT4_RD_REAL'):
+        R8 = Get_data_from_server('172.16.1.181')
+    return R1, R2, R3, R4, R5, R6, R7, R8
 #############################################################################
 def value_to_platforms_not_str():
     allure.description("Value to platforms not str")
@@ -151,32 +198,78 @@ def value_to_platforms_not_str():
 #############################################################################
 def correct_value_to_platforms_one_server():
     allure.description("Correct value to platform")
-    data = {
-        "tradingProfile":{
-            "name":"Default",
-            "platforms":["MT4_INSTANT_DEMO"]
+    with allure.step('Sending a request'):
+        data = {
+            "tradingProfile":{
+                "name":"Crisis",
+                "platforms":["MT4_INSTANT_DEMO"]
+            }
         }
-    }
-    FinishResult = trueurl(data)
-    return FinishResult
+        R1 = trueurl(data)
+    time.sleep(2)
+
+    with allure.step('Get data from MT4_INSTANT_REAL1'):
+        R2 = Get_data_from_server('172.16.1.183')
+
+    with allure.step('Get data from MT4_INSTANT_REAL2'):
+        R3 = Get_data_from_server('172.16.1.184')
+
+    with allure.step('Get data from MT4_RD_DEMO'):
+        R4 = Get_data_from_server('172.16.1.132')
+
+    with allure.step('Get data from MT4_MARKET_REAL'):
+        R5 = Get_data_from_server('172.16.1.60')
+
+    with allure.step('Get data from MT4_INSTANT_DEMO'):
+        R6 = Get_data_from_server('172.16.1.175')
+
+    with allure.step('Get data from MT4_MARKET_DEMO'):
+        R7 = Get_data_from_server('172.16.1.51')
+
+    with allure.step('Get data from MT4_RD_REAL'):
+        R8 = Get_data_from_server('172.16.1.181')
+    return R1, R2, R3, R4, R5, R6, R7, R8
 #############################################################################
 def correct_value_to_platforms_two_servers():
     allure.description("Correct value to platforms")
-    data = {
-        "tradingProfile":{
-            "name":"Default",
-            "platforms":["MT4_RD_REAL","MT4_RD_DEMO"]
+    with allure.step('Sending a request'):
+        data = {
+            "tradingProfile":{
+                "name":"Crisis",
+                "platforms":["MT4_RD_REAL","MT4_RD_DEMO"]
+            }
         }
-    }
-    FinishResult = trueurl(data)
-    return FinishResult
+        R1 = trueurl(data)
+    time.sleep(2)
+
+    with allure.step('Get data from MT4_INSTANT_REAL1'):
+        R2 = Get_data_from_server('172.16.1.183')
+
+    with allure.step('Get data from MT4_INSTANT_REAL2'):
+        R3 = Get_data_from_server('172.16.1.184')
+
+    with allure.step('Get data from MT4_RD_DEMO'):
+        R4 = Get_data_from_server('172.16.1.132')
+
+    with allure.step('Get data from MT4_MARKET_REAL'):
+        R5 = Get_data_from_server('172.16.1.60')
+
+    with allure.step('Get data from MT4_INSTANT_DEMO'):
+        R6 = Get_data_from_server('172.16.1.175')
+
+    with allure.step('Get data from MT4_MARKET_DEMO'):
+        R7 = Get_data_from_server('172.16.1.51')
+
+    with allure.step('Get data from MT4_RD_REAL'):
+        R8 = Get_data_from_server('172.16.1.181')
+    return R1, R2, R3, R4, R5, R6, R7, R8
 #############################################################################
 def value_to_platforms_two_servers_one_not_in_config():
     allure.description("Two server one not in the config")
     data = {
         "tradingProfile":{
             "name":"For_AutoTest",
-            "platforms":["MT5_DEMO","MT5_TEST"]
+            "platforms":["MT4_MARKET_DEMO","MT4_TEST"]
         }
     }
     FinishResult = trueurl(data)
@@ -187,7 +280,7 @@ def not_found_platform_in_profile():
     data = {
         "tradingProfile":{
             "name":"Default",
-            "platforms":["MT4_TEST"]
+            "platforms":["MT4_TEST_DEMO"]
         }
     }
     FinishResult = trueurl(data)

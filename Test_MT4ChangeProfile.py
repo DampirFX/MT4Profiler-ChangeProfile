@@ -59,40 +59,100 @@ class Test_ChangeProfile():
         assert value_to_name_not_str() == {'Description': "'name' param not a string", 'Status': 5}
 
     def test_correct_value_to_name(resource_setup):
-        assert correct_value_to_name() == {'Description': 'Done',
+        finres = correct_value_to_name()
+        assert finres[0] == {'Description': 'Done',
                                            'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT4_INSTANT_REAL1'},
                                                       {'Description': 'Done', 'Status': 0, 'platform': 'MT4_MARKET_REAL'}], 'Status': 0}
+
+        assert finres[1] == ['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+
+        assert finres[2] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+        assert finres[3] == ['2', '2']
+
+        assert finres[4] == ['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+
+        assert finres[5] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+        assert finres[6] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+        assert finres[7] == ['2', '2']
 
     def test_not_found_profile_for_name_value(resource_setup):
         assert not_found_profile_for_name_value() == {'Description': "can't find profile 'for test'", 'Status': 5}
 
     def test_no_value_to_platforms(resource_setup):
-        assert no_value_to_platforms() == {'Description': 'Done',
-                                           'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT4_INSTANT_REAL1'},
-                                                     {'Description': 'Done', 'Status': 0, 'platform': 'MT4_INSTANT_REAL2'},
-                                                     {'Description': 'Done', 'Status': 0, 'platform': 'MT4_RD_DEMO'},
-                                                     {'Description': 'Done', 'Status': 0, 'platform': 'MT4_MARKET_REAL'},
-                                                     {'Description': 'Done', 'Status': 0, 'platform': 'MT4_INSTANT_DEMO'},
-                                                     {'Description': 'Done', 'Status': 0, 'platform': 'MT4_MARKET_DEMO'},
-                                                     {'Description': 'Done', 'Status': 0, 'platform': 'MT4_RD_REAL'}], 'Status': 0}
+        finres = request_without_platforms()
+        assert finres[0] == {'Description': 'Done', 'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT4_INSTANT_REAL1'},
+                                                               {'Description': 'Done', 'Status': 0, 'platform': 'MT4_INSTANT_REAL2'},
+                                                               {'Description': 'Done', 'Status': 0, 'platform': 'MT4_RD_DEMO'},
+                                                               {'Description': 'Done', 'Status': 0, 'platform': 'MT4_MARKET_REAL'},
+                                                               {'Description': 'Done', 'Status': 0, 'platform': 'MT4_INSTANT_DEMO'},
+                                                               {'Description': 'Done', 'Status': 0, 'platform': 'MT4_MARKET_DEMO'},
+                                                               {'Description': 'Done', 'Status': 0, 'platform': 'MT4_RD_REAL'}], 'Status': 0}
 
+        assert finres[1] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+        assert finres[2] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+        assert finres[3] == ['2', '2']
+
+        assert finres[4] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+        assert finres[5] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+        assert finres[6] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+        assert finres[7] == ['2', '2']
 
     def test_value_to_platforms_not_str(resource_setup):
         assert value_to_platforms_not_str() == {'Description': 'platform element not string', 'Status': 5}
 
     def test_correct_value_to_platforms_one_server(resource_setup):
-        assert correct_value_to_platforms_one_server() == {'Description': 'Done', 'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT4_INSTANT_DEMO'}], 'Status': 0}
+        finres = correct_value_to_platforms_one_server()
+        assert finres[0] == {'Description': 'Done', 'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT4_INSTANT_DEMO'}], 'Status': 0}
+
+        assert finres[1] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+        assert finres[2] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+        assert finres[3] == ['2', '2']
+
+        assert finres[4] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+        assert finres[5] == ['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+
+        assert finres[6] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+        assert finres[7] == ['2', '2']
 
     def test_correct_value_to_platforms_two_servers(resource_setup):
-        assert correct_value_to_platforms_two_servers() == {'Description': 'Done', 'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT4_RD_REAL'},
+        finres = correct_value_to_platforms_two_servers()
+        assert finres[0] == {'Description': 'Done', 'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT4_RD_REAL'},
                                                                                               {'Description': 'Done', 'Status': 0, 'platform': 'MT4_RD_DEMO'}], 'Status': 0}
 
+        assert finres[1] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+        assert finres[2] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+        assert finres[3] == ['5', '5']
+
+        assert finres[4] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+        assert finres[5] == ['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+
+        assert finres[6] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+        assert finres[7] == ['5', '5']
+
     def test_value_to_platforms_two_servers_one_not_in_config(resource_setup):
-        assert value_to_platforms_two_servers_one_not_in_config() == {'Description': 'One or more updates are failed', 'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT5_DEMO'}, {'Description': 'No connection', 'Status': 6, 'platform': 'MT5_TEST'}], 'Status': 7}
+        assert value_to_platforms_two_servers_one_not_in_config() == {'Description': 'Some updates have failed',
+                                                                      'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT4_MARKET_DEMO'},
+                                                                                 {'Description': 'No connection', 'Status': 6, 'platform': 'MT4_TEST'}], 'Status': 7}
 
     def test_not_found_platform_in_profile(resource_setup):
         assert not_found_platform_in_profile() == {'Description': 'Some updates have failed',
-                                                   'Result': [{'Description': 'No information in config', 'Status': 2, 'platform': 'MT4_TEST'}], 'Status': 7}
+                                                   'Result': [{'Description': 'No information in config', 'Status': 2, 'platform': 'MT4_TEST_DEMO'}], 'Status': 7}
 #############################################################################
 #Проверка кодов ответа
 #############################################################################
