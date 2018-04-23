@@ -38,13 +38,7 @@ def request_without_name():
             "tradingProfile":{"platforms":["MT4_MARKET_REAL", "MT4_MARKET_DEMO"]}
         }
         R1 = trueurl(data)
-
-    with allure.step('Get data from MT4_MARKET_REAL'):
-        R2 = Get_data_from_server('172.16.1.60')
-
-    with allure.step('Get data from MT4_MARKET_DEMO'):
-        R3 = Get_data_from_server('172.16.1.51')
-    return R1, R2, R3
+    return R1
 #############################################################################
 def request_without_platforms():
     allure.description("No parameter platforms on request")
@@ -294,7 +288,7 @@ def no_connection_with_server():
     data = {
         "tradingProfile":{
             "name":"For_AutoTest",
-            "platforms":["MT5_TEST"]
+            "platforms":["MT4_TEST"]
         }
     }
     FinishResult = trueurl(data)
@@ -305,13 +299,13 @@ def no_connection_with_server():
 #############################################################################
 def no_valid_json_1():
     allure.description("No valid json 1")
-    data = '{"tradingProfile":{"name":"Default","platforms":["MT5_DEMO"]}}'
+    data = '{"tradingProfile":{"name":"Default","platforms":["MT4_MARKET_DEMO"]}}'
     FinishResult = trueurl(data)
     return FinishResult
 
 def no_valid_json_2():
     allure.description("No valid json 2")
-    data = "{\"tradingProfile:{\"name\":\"Default\",\"platforms\":[\"MT5_DEMO\"]}}"
+    data = "{\"tradingProfile:{\"name\":\"Default\",\"platforms\":[\"MT4_MARKET_DEMO\"]}}"
     FinishResult = trueurl_without_json(data)
     return FinishResult
 
@@ -327,4 +321,66 @@ def false_reload():
     allure.description('Check false request ReloadProfiles')
     FinishResult = reload_falseurl()
     return FinishResult
+#############################################################################
+def All_Crisis():
+    allure.description("All Crisis mode")
+    with allure.step('Sending a request'):
+        data = {
+            "tradingProfile":{"name":"Crisis"}
+        }
+        R1 = trueurl(data)
+    time.sleep(2)
+
+    with allure.step('Get data from MT4_INSTANT_REAL1'):
+        R2 = Get_data_from_server('172.16.1.183')
+
+    with allure.step('Get data from MT4_INSTANT_REAL2'):
+        R3 = Get_data_from_server('172.16.1.184')
+
+    with allure.step('Get data from MT4_RD_DEMO'):
+        R4 = Get_data_from_server('172.16.1.132')
+
+    with allure.step('Get data from MT4_MARKET_REAL'):
+        R5 = Get_data_from_server('172.16.1.60')
+
+    with allure.step('Get data from MT4_INSTANT_DEMO'):
+        R6 = Get_data_from_server('172.16.1.175')
+
+    with allure.step('Get data from MT4_MARKET_DEMO'):
+        R7 = Get_data_from_server('172.16.1.51')
+
+    with allure.step('Get data from MT4_RD_REAL'):
+        R8 = Get_data_from_server('172.16.1.181')
+    return R1, R2, R3, R4, R5, R6, R7, R8
+#############################################################################
+def All_Default():
+    allure.description("All Default mode")
+    with allure.step('Sending a request'):
+        data = {
+            "tradingProfile":{"name":"Default"}
+        }
+        R1 = trueurl(data)
+    time.sleep(2)
+
+    with allure.step('Get data from MT4_INSTANT_REAL1'):
+        R2 = Get_data_from_server('172.16.1.183')
+
+    with allure.step('Get data from MT4_INSTANT_REAL2'):
+        R3 = Get_data_from_server('172.16.1.184')
+
+    with allure.step('Get data from MT4_RD_DEMO'):
+        R4 = Get_data_from_server('172.16.1.132')
+
+    with allure.step('Get data from MT4_MARKET_REAL'):
+        R5 = Get_data_from_server('172.16.1.60')
+
+    with allure.step('Get data from MT4_INSTANT_DEMO'):
+        R6 = Get_data_from_server('172.16.1.175')
+
+    with allure.step('Get data from MT4_MARKET_DEMO'):
+        R7 = Get_data_from_server('172.16.1.51')
+
+    with allure.step('Get data from MT4_RD_REAL'):
+        R8 = Get_data_from_server('172.16.1.181')
+    return R1, R2, R3, R4, R5, R6, R7, R8
 #############################################################################

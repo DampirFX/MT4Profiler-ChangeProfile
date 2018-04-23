@@ -25,8 +25,7 @@ class Test_ChangeProfile():
         assert request_without_name_and_platform() == {'Description': "can't find 'name' param", 'Status': 4}
 
     def test_request_without_name(resource_setup):
-        finres = request_without_name()
-        assert finres[0] == {'Description': "can't find 'name' param", 'Status': 4}
+        assert request_without_name() == {'Description': "can't find 'name' param", 'Status': 4}
 
     def test_request_without_platforms(resource_setup):
         finres = request_without_platforms()
@@ -158,22 +157,22 @@ class Test_ChangeProfile():
 #############################################################################
     class Test_response_code():
         def test_not_found_platform_in_profile(resource_setup):
-            assert not_found_platform_in_profile() == {'Description': 'One or more updates are failed', 'Result': [{'Description': 'No information in config', 'Status': 2, 'platform': 'MT5_TEST'}], 'Status': 7}
+            assert not_found_platform_in_profile() == {'Description': 'One or more updates are failed', 'Result': [{'Description': 'No information in config', 'Status': 2, 'platform': 'MT4_TEST_DEMO'}], 'Status': 7}
 
         def test_wrong_request(resource_setup):
             assert wrong_request() == {'Description': 'invalid uri', 'Status': 3}
 
         def test_no_body_request(resource_setup):
-            assert no_body_request() == {'Description': "can't read 'tradingProfile' param", 'Status': 4}
+            assert no_body_request() == {'Description': "can't find 'tradingProfile' param", 'Status': 4}
 
         def test_request_without_name_and_platform(resource_setup):
-            assert request_without_name_and_platform() == {'Description': "can't read 'name' param", 'Status': 4}
+            assert request_without_name_and_platform() == {'Description': "can't find 'name' param", 'Status': 4}
 
         def test_request_without_name(resource_setup):
-            assert request_without_name() == {'Description': "can't read 'name' param", 'Status': 4}
+            assert request_without_name() == {'Description': "can't find 'name' param", 'Status': 4}
 
         def test_value_to_name_not_str(resource_setup):
-            assert value_to_name_not_str() == {'Description': "can't read 'name' param", 'Status': 4}
+            assert value_to_name_not_str() == {'Description': "'name' param not a string", 'Status': 5}
 
         def test_no_value_to_name(resource_setup):
             assert no_value_to_name() == {'Description': "can't find profile ''", 'Status': 5}
@@ -188,14 +187,15 @@ class Test_ChangeProfile():
             assert value_to_platforms_not_str() == {'Description': 'platform element not string', 'Status': 5}
 
         def test_no_connection_with_server(resource_setup):
-            assert no_connection_with_server() == {'Description': 'One or more updates are failed', 'Result': [{'Description': 'No connection', 'Status': 6, 'platform': 'MT5_TEST'}], 'Status': 7}
+            assert no_connection_with_server() == {'Description': 'Some updates have failed', 'Result': [{'Description': 'No connection', 'Status': 6, 'platform': 'MT4_TEST'}], 'Status': 7}
 
         def test_not_found_platform_in_profile(resource_setup):
-            assert not_found_platform_in_profile() == {'Description': 'One or more updates are failed', 'Result': [{'Description': 'No information in config', 'Status': 2, 'platform': 'MT5_TEST'}], 'Status': 7}
+            assert not_found_platform_in_profile() == {'Description': 'Some updates have failed', 'Result': [{'Description': 'No information in config', 'Status': 2, 'platform': 'MT4_TEST_DEMO'}], 'Status': 7}
 
         def test_value_to_platforms_two_servers_one_not_in_config(resource_setup):
-            assert value_to_platforms_two_servers_one_not_in_config() == {'Description': 'One or more updates are failed', 'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT5_DEMO'}, {'Description': 'No connection', 'Status': 6, 'platform': 'MT5_TEST'}], 'Status': 7}
-
+            assert value_to_platforms_two_servers_one_not_in_config() == {'Description': 'Some updates have failed',
+                                                                          'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT4_MARKET_DEMO'},
+                                                                                     {'Description': 'No connection', 'Status': 6, 'platform': 'MT4_TEST'}], 'Status': 7}
 #############################################################################
 #Проверка запроса Reload
 #############################################################################
@@ -215,3 +215,51 @@ class Test_valid_json():
         assert no_valid_json_1() == {'Description': 'in Json::Value::operator[](char const*)const: requires objectValue', 'Status': 1}
     def test_no_valid_json_2(resource_setup):
         assert no_valid_json_2() == {'Description': 'invalid json', 'Status': 5}
+
+def test_all_crisis(resource_setup):
+    finres = All_Crisis()
+    assert finres[0] == {'Description': 'Done', 'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT4_INSTANT_REAL1'},
+                                                           {'Description': 'Done', 'Status': 0, 'platform': 'MT4_INSTANT_REAL2'},
+                                                           {'Description': 'Done', 'Status': 0, 'platform': 'MT4_RD_DEMO'},
+                                                           {'Description': 'Done', 'Status': 0, 'platform': 'MT4_MARKET_REAL'},
+                                                           {'Description': 'Done', 'Status': 0, 'platform': 'MT4_INSTANT_DEMO'},
+                                                           {'Description': 'Done', 'Status': 0, 'platform': 'MT4_MARKET_DEMO'},
+                                                           {'Description': 'Done', 'Status': 0, 'platform': 'MT4_RD_REAL'}], 'Status': 0}
+
+    assert finres[1] == ['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+
+    assert finres[2] == ['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+
+    assert finres[3] == ['5', '5']
+
+    assert finres[4] == ['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+
+    assert finres[5] == ['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+
+    assert finres[6] == ['2', '2', '2', '2', '2', '5', '5', '5', '5', '5', '5', '5', '5']
+
+    assert finres[7] == ['5', '5']
+
+def test_all_default(resource_setup):
+    finres = All_Default()
+    assert finres[0] == {'Description': 'Done', 'Result': [{'Description': 'Done', 'Status': 0, 'platform': 'MT4_INSTANT_REAL1'},
+                                                           {'Description': 'Done', 'Status': 0, 'platform': 'MT4_INSTANT_REAL2'},
+                                                           {'Description': 'Done', 'Status': 0, 'platform': 'MT4_RD_DEMO'},
+                                                           {'Description': 'Done', 'Status': 0, 'platform': 'MT4_MARKET_REAL'},
+                                                           {'Description': 'Done', 'Status': 0, 'platform': 'MT4_INSTANT_DEMO'},
+                                                           {'Description': 'Done', 'Status': 0, 'platform': 'MT4_MARKET_DEMO'},
+                                                           {'Description': 'Done', 'Status': 0, 'platform': 'MT4_RD_REAL'}], 'Status': 0}
+
+    assert finres[1] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+    assert finres[2] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+    assert finres[3] == ['2', '2']
+
+    assert finres[4] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+    assert finres[5] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+    assert finres[6] == ['2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+    assert finres[7] == ['2', '2']
