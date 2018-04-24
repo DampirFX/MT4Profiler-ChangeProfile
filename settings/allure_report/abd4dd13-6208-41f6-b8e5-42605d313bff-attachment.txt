@@ -1,5 +1,0 @@
-
-Start test
-function
-<class 'Test_ChangeProfile.Test_ChangeProfile'>
-Description: test_request_without_name_and_platform

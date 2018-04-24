@@ -3,6 +3,7 @@ from ctypes.wintypes import *
 from enum import *
 import time
 import sys
+import os
 
 # +------------------------------------------------------------------+
 # |                        API Version                               |
@@ -1822,7 +1823,9 @@ class dealing_notification_codes(Enum):
 # +------------------------------------------------------------------+
 # Подгружаем враппер
 #lib = ctypes.CDLL("E:/for_work/MT4ManPythonWrapper/_output/bin/Win32/Debug/MT4ManPythonWrapper.dll")
-lib = ctypes.CDLL("D:/Visual Studio/Projects/MT4ManPythonWrapper/_output/bin/Win32/Debug/MT4ManPythonWrapper.dll")
+#lib = ctypes.CDLL("D:/Visual Studio/Projects/MT4ManPythonWrapper/_output/bin/Win32/Debug/MT4ManPythonWrapper.dll")
+dir = os.path.dirname(__file__)
+lib = ctypes.CDLL(os.path.join(dir,"../libs/MT4ManPythonWrapper.dll"))
 #функции враппера
 ########################################################################################################################
 # создание менеджерского интерфейса

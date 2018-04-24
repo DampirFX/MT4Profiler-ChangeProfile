@@ -1,5 +1,0 @@
-
-Start test
-function
-<class 'Test_ChangeProfile.Test_ChangeProfile'>
-Description: test_correct_value_to_platforms_two_servers

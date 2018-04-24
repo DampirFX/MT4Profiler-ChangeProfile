@@ -1,5 +1,0 @@
-
-Start test
-function
-<class 'Test_ChangeProfile.Test_Data_in_DB'>
-Description: test_check_db_first

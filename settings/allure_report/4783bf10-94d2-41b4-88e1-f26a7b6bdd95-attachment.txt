@@ -1,5 +1,0 @@
-
-Start test
-function
-<class 'Test_ChangeProfile.Test_valid_json'>
-Description: test_no_valid_json_2

@@ -1,5 +1,0 @@
-
-Start test
-function
-<class 'Test_ChangeProfile.Test_ChangeProfile.Test_response_code'>
-Description: test_request_without_name

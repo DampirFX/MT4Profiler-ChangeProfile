@@ -1,5 +1,0 @@
-
-Start test
-function
-<class 'Test_ChangeProfile.Test_ChangeProfile'>
-Description: test_value_to_platforms_not_str
