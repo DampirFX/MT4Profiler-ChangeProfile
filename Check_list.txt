@@ -31,3 +31,6 @@
 Проверка запроса ReloadProfiles
 1. Корректный запроса
 2. Не корректный запрос
+
+Установка модуля mysql
+pip install mysqlclient
