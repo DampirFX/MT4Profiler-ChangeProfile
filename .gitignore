@@ -6,3 +6,4 @@ mtmanapi.dll
 /MT4ManPythonWrapper.dll
 /.pytest_cache/
 /.idea/
+/MT4Profiler-ChangeProfile.iml
