@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b2432fcf-194e-49e9-8263-2a4d1d04102b" name="Default" comment="add information to gitignore" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\SibIT\autotest\MT4Profiler-ChangeProfile\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1QzcvkzfuV0GC7OUYCBKjr4FBTL" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python tests.pytest in Test_MT4Profiler.py">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pytest for Test_MT4Profiler.Test_ChangeProfile.test_no_body_request" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="MT4Profiler-ChangeProfile" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Test_MT4Profiler.Test_ChangeProfile.test_no_body_request&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for Test_MT4Profiler.Test_ChangeProfile.test_wrong_request" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="MT4Profiler-ChangeProfile" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Test_MT4Profiler.Test_ChangeProfile.test_wrong_request&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for Test_MT4Profiler.Test_request_ChangeServerSettings.test_request_changesettings_without_platform" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="MT4Profiler-ChangeProfile" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Test_MT4Profiler.Test_request_ChangeServerSettings.test_request_changesettings_without_platform&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for Test_MT4Profiler.Test_request_ChangeServerSettings.test_success_one_server_fail_one" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="MT4Profiler-ChangeProfile" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Test_MT4Profiler.Test_request_ChangeServerSettings.test_success_one_server_fail_one&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for Test_MT4Profiler.Test_response_code.test_not_found_platform_in_profile_status_2_and_7" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="MT4Profiler-ChangeProfile" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Test_MT4Profiler.Test_response_code.test_not_found_platform_in_profile_status_2_and_7&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in Test_MT4Profiler.py" type="tests" factoryName="py.test" nameIsGenerated="true">
+      <module name="MT4Profiler-ChangeProfile" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\Users\ivanov-aan\AppData\Local\Programs\Python\Python37-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Test_MT4Profiler.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python tests.pytest in Test_MT4Profiler.py" />
+      <item itemvalue="Python tests.pytest for Test_MT4Profiler.Test_request_ChangeServerSettings.test_success_one_server_fail_one" />
+      <item itemvalue="Python tests.pytest for Test_MT4Profiler.Test_request_ChangeServerSettings.test_request_changesettings_without_platform" />
+      <item itemvalue="Python tests.pytest for Test_MT4Profiler.Test_ChangeProfile.test_wrong_request" />
+      <item itemvalue="Python tests.pytest for Test_MT4Profiler.Test_ChangeProfile.test_no_body_request" />
+      <item itemvalue="Python tests.pytest for Test_MT4Profiler.Test_response_code.test_not_found_platform_in_profile_status_2_and_7" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest for Test_MT4Profiler.Test_response_code.test_not_found_platform_in_profile_status_2_and_7" />
+        <item itemvalue="Python tests.pytest for Test_MT4Profiler.Test_ChangeProfile.test_no_body_request" />
+        <item itemvalue="Python tests.pytest for Test_MT4Profiler.Test_ChangeProfile.test_wrong_request" />
+        <item itemvalue="Python tests.pytest for Test_MT4Profiler.Test_request_ChangeServerSettings.test_request_changesettings_without_platform" />
+        <item itemvalue="Python tests.pytest for Test_MT4Profiler.Test_request_ChangeServerSettings.test_success_one_server_fail_one" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b2432fcf-194e-49e9-8263-2a4d1d04102b" name="Default" comment="" />
+      <created>1519887539039</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1519887539039</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Create structure">
+      <created>1519888049385</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1519888049385</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Actualize tets for MT4">
+      <created>1519894013190</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1519894013190</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Actualize tets for MT4">
+      <created>1523877177502</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1523877177502</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Actualize test for MT4">
+      <created>1524483105699</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1524483105699</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Actualize test for MT4 (all test work)">
+      <created>1524484924498</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1524484924498</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Actualize test for MT4 (all test work)">
+      <created>1524557481368</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1524557481368</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Actualize test for MT4 (all test work)">
+      <created>1524559973859</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1524559973859</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Actualize test for MT4 (all test work)">
+      <created>1524560143082</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1524560143082</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Actualize test for MT4 (all test work)">
+      <created>1524560548725</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1524560548725</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Actualize test for MT4 (all test work)">
+      <created>1524560821033</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1524560821033</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add info about installing module">
+      <created>1530780967631</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1530780967632</updated>
+    </task>
+    <task id="LOCAL-00012" summary="New test for request changesettings">
+      <created>1568963667197</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1568963667199</updated>
+    </task>
+    <task id="LOCAL-00013" summary="New test for request changesettings">
+      <created>1568963803773</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1568963803773</updated>
+    </task>
+    <task id="LOCAL-00014" summary="New test for request changesettings">
+      <created>1568963885268</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1568963885268</updated>
+    </task>
+    <task id="LOCAL-00015" summary="refactoring">
+      <created>1568971623817</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1568971623817</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix mistake for test test_not_found_platform_in_profile_status_2_and_7">
+      <created>1568974349315</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1568974349315</updated>
+    </task>
+    <task id="LOCAL-00017" summary="fix mistake for test test_not_found_platform_in_profile_status_2_and_7">
+      <created>1568974565083</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1568974565083</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add information to gitignore">
+      <created>1568974856505</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1568974856505</updated>
+    </task>
+    <task id="LOCAL-00019" summary="add information to gitignore">
+      <created>1568975219023</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1568975219023</updated>
+    </task>
+    <task id="LOCAL-00020" summary="add information to gitignore">
+      <created>1568975439399</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1568975439399</updated>
+    </task>
+    <task id="LOCAL-00021" summary="add information to gitignore">
+      <created>1568975647834</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1568975647834</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Create structure" />
+    <MESSAGE value="Actualize tets for MT4" />
+    <MESSAGE value="Actualize test for MT4" />
+    <MESSAGE value="Actualize test for MT4 (all test work)" />
+    <MESSAGE value="Add info about installing module" />
+    <MESSAGE value="New test for request changesettings" />
+    <MESSAGE value="refactoring" />
+    <MESSAGE value="refactoring_2" />
+    <MESSAGE value="fix mistake for test test_not_found_platform_in_profile_status_2_and_7" />
+    <MESSAGE value="add information to gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="add information to gitignore" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="tests">
+        <watch expression="R2" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
