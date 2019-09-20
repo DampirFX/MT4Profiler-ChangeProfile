@@ -1,5 +1,5 @@
 import pytest
-from .Cases import *
+from Cases import *
 
 
 @pytest.fixture(autouse=True)
