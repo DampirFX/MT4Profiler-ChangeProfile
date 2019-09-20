@@ -15,17 +15,17 @@ def resource_setup(request):
 #Проверка запроса ChangeProfile
 #############################################################################
 class Test_ChangeProfile():
-    def test_wrong_request(resource_setup):
-        assert wrong_request() == {'Description': 'invalid uri', 'Status': 3}
+    def test_wrong_request_changeprofile(resource_setup):
+        assert wrong_request_changeprofile() == {'Description': 'invalid uri', 'Status': 3}
 
-    def test_no_body_request(resource_setup):
-        assert no_body_request() == {'Description': "can't find 'tradingProfile' param", 'Status': 4}
+    def test_no_body_in_the_request_changeprofile(resource_setup):
+        assert no_body_in_the_request_changeprofile() == {'Description': "can't find 'tradingProfile' param", 'Status': 4}
 
     def test_request_without_name_and_platform(resource_setup):
         assert request_without_name_and_platform() == {'Description': "can't find 'name' param", 'Status': 4}
 
     def test_request_without_name(resource_setup):
-        assert request_without_name() == {'Description': "can't find 'name' param", 'Status': 4}
+        assert request_without_name_for_profile() == {'Description': "can't find 'name' param", 'Status': 4}
 
     def test_request_without_platforms(resource_setup):
         finres = request_without_platforms()
@@ -117,40 +117,42 @@ class Test_ChangeProfile():
 #Проверка кодов ответа
 #############################################################################
     class Test_response_code():
-        def test_not_found_platform_in_profile(resource_setup):
-            assert not_found_platform_in_profile() == {'Description': 'One or more updates are failed', 'Result': [{'Description': 'No information in config', 'Status': 2, 'platform': 'MT4_INSTANT_DEMO'}], 'Status': 7}
+        def test_not_found_platform_in_profile_status_2_and_7(resource_setup):
+            assert not_found_platform_in_profile() == {'Description': 'One or more updates are failed',
+                                                       'Result': [{'Description': 'No information in config', 'Status': 2, 'platform': 'MT4_INSTANT_DEMO'}], 'Status': 7}
 
-        def test_wrong_request(resource_setup):
-            assert wrong_request() == {'Description': 'invalid uri', 'Status': 3}
+        def test_wrong_request_status_3(resource_setup):
+            assert wrong_request_changeprofile() == {'Description': 'invalid uri', 'Status': 3}
 
-        def test_no_body_request(resource_setup):
-            assert no_body_request() == {'Description': "can't find 'tradingProfile' param", 'Status': 4}
+        def test_no_body_request_status_4(resource_setup):
+            assert no_body_in_the_request_changeprofile() == {'Description': "can't find 'tradingProfile' param", 'Status': 4}
 
-        def test_request_without_name_and_platform(resource_setup):
+        def test_request_without_name_and_platform_status_4(resource_setup):
             assert request_without_name_and_platform() == {'Description': "can't find 'name' param", 'Status': 4}
 
-        def test_request_without_name(resource_setup):
-            assert request_without_name() == {'Description': "can't find 'name' param", 'Status': 4}
+        def test_request_without_name_status_4(resource_setup):
+            assert request_without_name_for_profile() == {'Description': "can't find 'name' param", 'Status': 4}
 
-        def test_value_to_name_not_str(resource_setup):
+        def test_value_to_name_not_str_status_5(resource_setup):
             assert value_to_name_not_str() == {'Description': "'name' param not a string", 'Status': 5}
 
-        def test_no_value_to_name(resource_setup):
+        def test_no_value_to_name_status_5(resource_setup):
             assert no_value_to_name() == {'Description': "can't find profile ''", 'Status': 5}
 
-        def test_not_found_profile_for_name_value(resource_setup):
+        def test_not_found_profile_for_name_value_status_5(resource_setup):
             assert not_found_profile_for_name_value() == {'Description': "can't find profile 'for test'", 'Status': 5}
 
-        def test_no_valid_json_2(resource_setup):
+        def test_no_valid_json_2_status_5(resource_setup):
             assert no_valid_json_2() == {'Description': 'invalid json', 'Status': 5}
 
-        def test_value_to_platforms_not_str(resource_setup):
+        def test_value_to_platforms_not_str_status_5(resource_setup):
             assert value_to_platforms_not_str() == {'Description': 'platform element not string', 'Status': 5}
 
-        def test_no_connection_with_server(resource_setup):
-            assert no_connection_with_server() == {'Description': 'Some updates have failed', 'Result': [{'Description': 'No connection', 'Status': 6, 'platform': 'MT4_TEST'}], 'Status': 7}
+        def test_no_connection_with_server_status_6_and_7(resource_setup):
+            assert no_connection_with_server() == {'Description': 'Some updates have failed',
+                                                   'Result': [{'Description': 'No connection', 'Status': 6, 'platform': 'MT4_TEST'}], 'Status': 7}
 
-        def test_not_found_platform_in_profile(resource_setup):
+        def test_not_found_platform_in_profile_status_2_and_7(resource_setup):
             assert not_found_platform_in_profile() == {'Description': 'Some updates have failed',
                                                        'Result': [{'Description': 'No information in profile',
                                                                    'Status': 2,
@@ -249,3 +251,23 @@ class Test_request_ChangeServerSettings():
 
     def test_trade_full(resource_setup):
         assert trade_full() == {"Description":"Done","Result":[{"Description":"Done","Status":0,"platform":"MT4_MARKET_REAL"}],"Status":0}
+
+    def test_success_one_server(resource_setup):
+        assert success_one_server() == {"Description":"Done","Result":[{"Description":"Done","Status":0,"platform":"MT4_MARKET_REAL"}],"Status":0}
+
+    def test_success_two_server(resource_setup):
+        assert success_two_server() == {"Description":"Done","Result":[{"Description":"Done","Status":0,"platform":"MT4_INSTANT_REAL1"},
+                                                                       {"Description":"Done","Status":0,"platform":"MT4_MARKET_REAL"}],"Status":0}
+
+    def test_success_one_server_fail_one(resource_setup):
+        assert success_one_server_fail_one() == {'Description': 'Some updates have failed',
+                                                 'Result': [{'Description': 'No information in config','Status': 2,'platform': 'MT4_INSTANT_TEST'},
+                                                            {'Description': 'Done','Status': 0,'platform': 'MT4_MARKET_REAL'}],'Status': 7}
+
+    def test_request_changesettings_without_platform(resource_setup):
+        assert request_changesettings_without_platform() == {"Description":"Done","Result":[{"Description":"Done","Status":0,"platform":"MT4_INSTANT_DEMO"},
+                                                                                            {"Description":"Done","Status":0,"platform":"MT4_INSTANT_REAL1"},
+                                                                                            {"Description":"Done","Status":0,"platform":"MT4_INSTANT_REAL2"},
+                                                                                            {"Description":"Done","Status":0,"platform":"MT4_MARKET_DEMO"},
+                                                                                            {"Description":"Done","Status":0,"platform":"MT4_MARKET_REAL"},
+                                                                                            {"Description":"Done","Status":0,"platform":"MT4_MARKET_REAL2"}],"Status":0}
