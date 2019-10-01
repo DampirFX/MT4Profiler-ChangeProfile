@@ -263,3 +263,14 @@ class Test_request_ChangeServerSettings():
                                                                        {"Description":"Done","Status":0,"platform":"MT4_MARKET_REAL"},
                                                                        {"Description":"Done","Status":0,"platform":"MT4_MARKET_REAL2"}],
                                                              "Status":0}
+
+
+    def test_request_changesettings_two_symbols(resource_setup):
+        assert request_changesettings_two_symbols() == {"Description":"Done",
+                                                             "Result":[{"Description":"Done","Status":0,"platform":"MT4_INSTANT_DEMO"},
+                                                                       {"Description":"Done","Status":0,"platform":"MT4_INSTANT_REAL1"},
+                                                                       {"Description":"Done","Status":0,"platform":"MT4_INSTANT_REAL2"},
+                                                                       {"Description":"Done","Status":0,"platform":"MT4_MARKET_DEMO"},
+                                                                       {"Description":"Done","Status":0,"platform":"MT4_MARKET_REAL"},
+                                                                       {"Description":"Done","Status":0,"platform":"MT4_MARKET_REAL2"}],
+                                                             "Status":0}

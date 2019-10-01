@@ -1,3 +1,4 @@
+import ctypes
 from ctypes import *
 from ctypes.wintypes import *
 from enum import *

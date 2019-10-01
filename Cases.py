@@ -312,3 +312,8 @@ def request_changesettings_without_platform():
     data = {"symbols":[{"symbol":"EURUSD","trade":"TRADE_FULL"}]}
     FinishResult = requests_to_service.server_settings_trueurl(data)
     return FinishResult
+
+def request_changesettings_two_symbols():
+    data = {"symbols":[{"symbol":"EURUSD","trade":"TRADE_FULL"},{"symbol":"AUDCAD","trade":"TRADE_FULL"}]}
+    FinishResult = requests_to_service.server_settings_trueurl(data)
+    return FinishResult
